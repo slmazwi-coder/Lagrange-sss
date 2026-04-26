@@ -302,9 +302,9 @@ export const setApplications = (items: Application[]) => setItems('admin_applica
 
 // Contact
 const defaultContact: ContactInfo = {
-  address: 'Sigoga Location, Mgubo A/A, Matatiele, 4730 (Eastern Cape)',
-  phone: '+27 76 707 3212',
-  email: 'office@mounthargreavesss.co.za',
+  address: 'La-Grange / Mafube, Nkosana A/A, Matatiele, 4730 (Eastern Cape)',
+  phone: '+27 79 986 8195',
+  email: 'office@lagrangesss.co.za',
   monThu: '07:30 - 15:30',
   friday: '07:30 - 13:30',
   weekend: 'Closed',
@@ -315,15 +315,15 @@ export const setContact = (info: ContactInfo) => setObject('admin_contact', info
 // About
 const defaultAbout: AboutInfo = {
   historyParagraphs: [
-    'Mount Hargreaves Senior Secondary School is a public boarding school serving learners in and around Sigoga Location (Matatiele, Eastern Cape).',
-    'The school is committed to disciplined learning, community values, and strong academic outcomes.',
+    'La-Grange Senior Secondary School is a public secondary school serving learners in the Mafube community, Nkosana A/A, Matatiele (Eastern Cape). The school is classified as Quintile 2 and operates as a no-fee school.',
+    'The school offers FET phase subjects and a range of extra-mural activities including soccer, netball, and athletics, developing well-rounded learners.',
     'Parents and guardians are encouraged to engage with the school through meetings, events, and ongoing learner support.',
   ],
-  principalName: 'Ms Ngozwana',
+  principalName: 'Lefefa JL',
   principalTitle: 'Principal',
   principalMessage: [
-    'Welcome to Mount Hargreaves Senior Secondary School. We believe every learner can achieve with consistent effort, good support, and a strong learning environment.',
-    'We value respect, responsibility, and pride in our school community. Together we can build a culture of achievement.',
+    'Welcome to La-Grange Senior Secondary School. We believe every learner can achieve with consistent effort, good support, and a strong learning environment.',
+    'We value respect, responsibility, and pride in our school community. Together we can build a culture of achievement — Arise and Shine.',
   ],
 };
 export const getAbout = () => getObject<AboutInfo>('admin_about', defaultAbout);
