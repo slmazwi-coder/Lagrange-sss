@@ -274,7 +274,7 @@ export const Admissions = () => {
           </div>
           <h2 className="text-3xl font-bold text-gray-900 mb-4">Application Submitted!</h2>
           <p className="text-gray-600 mb-8">
-            Thank you for applying to Mt Hargreaves Senior Secondary School. We have received your application and will be in contact shortly.
+            Thank you for applying to La-Grange Senior Secondary School. We have received your application and will be in contact shortly.
           </p>
           <a href="/" className="btn-primary w-full inline-block">Back to Home</a>
         </motion.div>
@@ -287,20 +287,7 @@ export const Admissions = () => {
   return (
     <div className="py-12 sm:py-16 bg-gray-50">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h1 className="section-title">General Application for Admission</h1>
-
-        {/* Boarding notice */}
-        <div className="mb-8 bg-white border border-gray-200 rounded-2xl p-5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-          <div>
-            <div className="font-bold text-gray-900">Need boarding accommodation?</div>
-            <div className="text-sm text-gray-600">
-              General and boarding applications are separate. Submit both if a hostel bed is required.
-            </div>
-          </div>
-          <a href="/boarding" className="btn-primary inline-flex items-center justify-center gap-2 shrink-0">
-            <BedDouble size={18} /> Boarding Application
-          </a>
-        </div>
+        <h1 className="section-title">Application for Admission</h1>
 
         <div className="bg-white rounded-3xl shadow-xl overflow-hidden">
 
@@ -310,7 +297,7 @@ export const Admissions = () => {
               <div>
                 <h2 className="text-2xl font-bold">Application for Admission to School</h2>
                 <p className="text-white/70 text-sm mt-1">
-                  Mt Hargreaves Senior Secondary School &nbsp;·&nbsp; Igoga Location, Matatiele 4730
+                  La-Grange Senior Secondary School &nbsp;·&nbsp; Nkosana A/A, Matatiele 4730
                 </p>
               </div>
               <div className="text-right text-sm text-white/70">
