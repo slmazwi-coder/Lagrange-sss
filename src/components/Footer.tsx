@@ -28,7 +28,7 @@ export const Footer = () => {
             <div className="flex items-center gap-3 mb-5">
               <div className="h-12 w-12 rounded-xl bg-white/95 overflow-hidden border border-white/20 shadow-lg">
                 <img
-                  src="/assets/Copilot_20260418_114207.png"
+                  src="/assets/logo.png"
                   alt="La-Grange SSS logo"
                   className="h-full w-full object-cover"
                 />
