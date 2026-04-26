@@ -20,7 +20,7 @@ export const About = () => {
   return (
     <div className="py-12 sm:py-16 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h1 className="section-title">About Mount Hargreaves SSS</h1>
+        <h1 className="section-title">About La-Grange SSS</h1>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center mb-16 sm:mb-24">
           <motion.div
@@ -52,7 +52,7 @@ export const About = () => {
                 onError={() => setCampusFailed(true)}
               />
             ) : (
-              <div className="w-full h-[260px] sm:h-[340px] bg-gradient-to-br from-school-green via-[#0B2A57] to-[#081529] flex items-center justify-center">
+              <div className="w-full h-[260px] sm:h-[340px] bg-gradient-to-br from-school-green via-[#1a3578] to-[#091a47] flex items-center justify-center">
                 <div className="text-center text-white/70 px-6">
                   <div className="mx-auto mb-3 w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center border border-white/15">
                     <ImageIcon />
