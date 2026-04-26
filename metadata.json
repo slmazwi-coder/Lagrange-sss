@@ -1,6 +1,6 @@
 {
-  "name": "Mount Hargreaves Senior Secondary School",
-  "description": "Mt Hargreaves SSS is a public boarding school based in Sigoga Location, Mgubo A/A, Matatiele, Eastern Cape.",
+  "name": "La-Grange Senior Secondary School",
+  "description": "La-Grange SSS is a public secondary school in Mafube, Nkosana A/A, Matatiele, Eastern Cape. Arise and Shine.",
   "requestFramePermissions": [
     "geolocation"
   ]
