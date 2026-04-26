@@ -10,7 +10,7 @@ export const About = () => {
 
   // Images live in:
   // public/assets/about/
-  const campusImageUrl = '/assets/about/d8d53f724e0b195658e83c643a6b491e.png';
+  const campusImageUrl = '/assets/about/campus.jpg';
   const principalImageUrl = '/assets/about/principal.jpg';
 
   useEffect(() => {
