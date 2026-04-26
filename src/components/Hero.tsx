@@ -5,10 +5,10 @@ import { ChevronLeft, ChevronRight, Image as ImageIcon } from 'lucide-react';
 // Hero images live in:
 // public/assets/hero/
 const slides = [
-  { url: '/assets/hero/images (2).jpeg', caption: 'Academic excellence' },
-  { url: '/assets/hero/images (1).jpeg', caption: 'Discipline and pride' },
-  { url: '/assets/hero/3e7e487a933835fd2aa5936d57c7cdd6.png', caption: 'Our team and community' },
-  { url: '/assets/hero/d8d53f724e0b195658e83c643a6b491e.png', caption: 'Celebrating achievements' },
+  { url: '/assets/hero/hero1.jpg', caption: 'Academic excellence' },
+  { url: '/assets/hero/hero2.jpg', caption: 'Discipline and pride' },
+  { url: '/assets/hero/hero3.jpg', caption: 'Our team and community' },
+  { url: '/assets/hero/hero4.jpg', caption: 'Celebrating achievements' },
 ];
 
 export const Hero = () => {
