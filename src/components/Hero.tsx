@@ -47,7 +47,7 @@ export const Hero = () => {
               onError={() => setFailed((p) => ({ ...p, [currentIndex]: true }))}
             />
           ) : (
-            <div className="h-full w-full bg-gradient-to-br from-school-green via-[#0B2A57] to-[#081529] opacity-95 flex items-center justify-center">
+            <div className="h-full w-full bg-gradient-to-br from-school-green via-[#1a3578] to-[#091a47] opacity-95 flex items-center justify-center">
               <div className="text-center text-white/70 px-6">
                 <div className="mx-auto mb-3 w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center border border-white/15">
                   <ImageIcon />
@@ -81,7 +81,7 @@ export const Hero = () => {
           transition={{ duration: 0.4, ease: 'easeOut', delay: 0.05 }}
           className="text-4xl md:text-6xl font-bold mb-4 uppercase"
         >
-          Mount Hargreaves SSS
+          La-Grange SSS
         </motion.h1>
         <motion.p
           initial={{ opacity: 0, y: 10 }}
@@ -89,7 +89,7 @@ export const Hero = () => {
           transition={{ duration: 0.4, ease: 'easeOut', delay: 0.1 }}
           className="text-lg md:text-2xl font-light italic"
         >
-          "we can"
+          "Arise and Shine"
         </motion.p>
         <motion.div
           initial={{ opacity: 0, y: 10 }}
