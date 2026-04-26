@@ -1,115 +1,121 @@
-import { useState } from "react";
-import { useNavigate, useLocation } from "react-router-dom";
-import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X } from "lucide-react";
+import React from 'react';
+import { Link, useLocation } from 'react-router-dom';
+import { Menu, X, User } from 'lucide-react';
+import { cn } from '../lib/utils';
 
-const navItems = ["Apps", "About", "Services", "Packages", "Areas", "Support"];
+const navLinks = [
+  { name: 'Home', path: '/' },
+  { name: 'About', path: '/about' },
+  { name: 'Documents', path: '/documents' },
+  { name: 'Achievements', path: '/achievements' },
+  { name: 'Sport', path: '/sport' },
+  { name: 'Activities', path: '/activities' },
+  { name: 'Admissions', path: '/admissions' },
+  { name: 'Contact', path: '/contact' },
+];
 
-const Navbar = () => {
-  const [open, setOpen] = useState(false);
-  const navigate = useNavigate();
+export const Navbar = () => {
+  const [isOpen, setIsOpen] = React.useState(false);
   const location = useLocation();
 
-  const scrollTo = (id: string) => {
-    const sectionId = id.toLowerCase();
-
-    if (location.pathname !== "/") {
-      setOpen(false);
-      navigate(`/#${sectionId}`);
-      return;
-    }
-
-    setOpen(false);
-    setTimeout(() => {
-      const el = document.getElementById(sectionId);
-      if (el) {
-        const navHeight = 72;
-        const top = el.getBoundingClientRect().top + window.scrollY - navHeight;
-        window.scrollTo({ top, behavior: "smooth" });
-      }
-    }, 350);
-  };
-
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 glass">
-      <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-2">
+    <nav className="glass-nav">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between h-20">
+          <div className="flex items-center">
+            <Link to="/" className="flex items-center gap-3">
+              <div className="h-12 w-12 rounded-xl bg-white flex items-center justify-center border border-gray-200 shadow-lg overflow-hidden">
+                <img
+                  src="/assets/Copilot_20260418_114207.png"
+                  alt="La-Grange SSS logo"
+                  className="h-full w-full object-cover"
+                />
+              </div>
+              <div className="hidden md:block">
+                <span className="text-xl font-bold text-school-green block leading-none">La-Grange SSS</span>
+                <span className="text-sm font-semibold text-gray-500">SENIOR SECONDARY SCHOOL</span>
+              </div>
+            </Link>
+          </div>
 
-        {/* Logo + wordmark */}
-        <button
-          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-          className="flex items-center gap-3"
-        >
-          <img
-            src="/Logo.jpg"
-            alt="AGE THIRTY4 logo"
-            className="h-16 w-auto object-contain mix-blend-screen"
-          />
-          <span className="text-2xl font-display font-bold tracking-tight">
-            AGE <span className="text-gradient">THIRTY4</span>
-          </span>
-        </button>
+          {/* Desktop Nav */}
+          <div className="hidden md:flex items-center space-x-3 lg:space-x-4">
+            {navLinks.map((link) => (
+              <Link
+                key={link.path}
+                to={link.path}
+                className={cn(
+                  'px-3 py-2 rounded-md text-sm font-medium transition-colors',
+                  location.pathname === link.path
+                    ? 'text-school-green bg-blue-50'
+                    : 'text-gray-600 hover:text-school-green hover:bg-gray-50'
+                )}
+              >
+                {link.name}
+              </Link>
+            ))}
 
-        {/* Desktop nav */}
-        <div className="hidden md:flex items-center gap-8">
-          {navItems.map((item) => (
-            <button
-              key={item}
-              onClick={() => scrollTo(item)}
-              className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors duration-200"
+            <Link
+              to="/student/login"
+              className={cn(
+                'px-3 py-2 rounded-md text-sm font-bold transition-colors inline-flex items-center gap-2',
+                location.pathname.startsWith('/student')
+                  ? 'text-white bg-school-green'
+                  : 'text-school-green bg-green-50 hover:bg-green-100'
+              )}
             >
-              {item}
-            </button>
-          ))}
-          <button
-            onClick={() => scrollTo("support")}
-            className="px-5 py-2 rounded-md bg-primary text-primary-foreground text-sm font-semibold hover:bg-primary/90 transition-colors"
-          >
-            Get Help
-          </button>
-        </div>
+              <User size={16} /> Student Portal
+            </Link>
+          </div>
 
-        {/* Mobile toggle */}
-        <button
-          onClick={() => setOpen(!open)}
-          className="md:hidden text-foreground p-1"
-          aria-label="Toggle menu"
-        >
-          {open ? <X size={24} /> : <Menu size={24} />}
-        </button>
+          {/* Mobile menu button */}
+          <div className="md:hidden flex items-center">
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="text-gray-600 hover:text-school-green p-2"
+              aria-label="Open menu"
+            >
+              {isOpen ? <X size={28} /> : <Menu size={28} />}
+            </button>
+          </div>
+        </div>
       </div>
 
-      {/* Mobile menu */}
-      <AnimatePresence>
-        {open && (
-          <motion.div
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.25 }}
-            className="md:hidden glass border-t border-border overflow-hidden"
-          >
-            <div className="flex flex-col p-6 gap-1">
-              {navItems.map((item) => (
-                <button
-                  key={item}
-                  onClick={() => scrollTo(item)}
-                  className="text-left text-foreground hover:text-primary transition-colors py-3 border-b border-border/30 last:border-0 text-base font-medium"
-                >
-                  {item}
-                </button>
-              ))}
-              <button
-                onClick={() => scrollTo("support")}
-                className="mt-4 w-full py-3 rounded-md bg-primary text-primary-foreground text-sm font-semibold hover:bg-primary/90 transition-colors"
+      {/* Mobile Nav */}
+      {isOpen && (
+        <div className="md:hidden bg-white border-b border-gray-200">
+          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+            {navLinks.map((link) => (
+              <Link
+                key={link.path}
+                to={link.path}
+                onClick={() => setIsOpen(false)}
+                className={cn(
+                  'block px-3 py-2 rounded-md text-base font-medium',
+                  location.pathname === link.path
+                    ? 'text-school-green bg-blue-50'
+                    : 'text-gray-600 hover:text-school-green hover:bg-gray-50'
+                )}
               >
-                Get Help
-              </button>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+                {link.name}
+              </Link>
+            ))}
+
+            <Link
+              to="/student/login"
+              onClick={() => setIsOpen(false)}
+              className={cn(
+                'block px-3 py-2 rounded-md text-base font-bold',
+                location.pathname.startsWith('/student')
+                  ? 'text-white bg-school-green'
+                  : 'text-school-green bg-green-50'
+              )}
+            >
+              Student Portal
+            </Link>
+          </div>
+        </div>
+      )}
     </nav>
   );
 };
-
-export default Navbar;
