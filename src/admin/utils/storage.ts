@@ -1,5 +1,15 @@
 // Storage utility — localStorage wrapper (swap with Supabase later)
 
+// Version key — bump this to clear stale localStorage data from previous school
+const STORAGE_VERSION = 'lagrange_v1';
+const versionKey = 'admin_storage_version';
+if (localStorage.getItem(versionKey) !== STORAGE_VERSION) {
+  // Clear all old school data
+  const keysToRemove = Object.keys(localStorage).filter(k => k.startsWith('admin_'));
+  keysToRemove.forEach(k => localStorage.removeItem(k));
+  localStorage.setItem(versionKey, STORAGE_VERSION);
+}
+
 export interface NewsItem {
   id: string;
   title: string;
@@ -282,10 +292,10 @@ export function calculateAverageMark(subjectMarks: SubjectMark[]): number {
 const defaultNews: NewsItem[] = [
   {
     id: '1',
-    title: '2027 Applications Open',
+    title: '2027 Admissions Open',
     date: 'Now open',
     content:
-      'Applications for admissions and boarding for the 2027 academic year are now open. Please submit your application using the online forms.',
+      'Applications for admission to La-Grange Senior Secondary School for the 2027 academic year are now open. Please submit your application using the online form.',
     image: '',
   },
 ];
